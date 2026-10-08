@@ -221,6 +221,16 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:.8r
 .main .parties{margin-top:.1rem}
 .huvud-label{margin:.65rem 0 .2rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;font-weight:650;color:inherit;opacity:.88}
 .huvud-q{margin:0 0 .35rem;font-size:.86rem;line-height:1.35;font-weight:650;color:inherit}
+
+.justnu{max-width:860px;margin:1.15rem auto 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .7rem;padding:.6rem .85rem;border:1px solid #313844;border-radius:12px;background:rgba(28,33,43,.55);color:#c8c4be;font-size:.82rem;line-height:1.45}
+.justnu[hidden]{display:none}
+.justnu-label{flex:0 0 auto;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;font-weight:650;color:var(--accent)}
+.justnu-text{flex:1 1 22rem;margin:0;min-width:0}
+.justnu-meta{flex:0 0 auto;margin-left:auto;color:#8d8880;font-size:.72rem;white-space:nowrap}
+.justnu-meta a{color:#a7a299;text-decoration:underline;text-underline-offset:2px}
+.justnu-meta a:hover{color:#f4f2ee}
+.justnu:not([hidden])~.tool-row{margin-top:.75rem}
+@media(max-width:560px){.justnu-meta{margin-left:0;white-space:normal}}
 </style></head><body>
 <div class="top">
   <header>
@@ -230,6 +240,26 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:.8r
     </div>
     <p class="latest-note" id="latestNote" title="Senaste beslutsdag"></p>
   </header>
+  <script id="justnu" type="application/json">{"date": "2026-10-08", "text": "Regeringen bildas. Talmannen har gett Magdalena Andersson (S) i uppdrag att sondera, och hon rapporterar senast 12 oktober. D\u00e4refter blir det statsministeromr\u00f6stning, tidigast 14 oktober. Inga nya voteringar sedan 13 augusti.", "source": "riksdagen.se", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/2/talmannens-sonderingsuppdrag-till-magdalena_cms77150d24-8e8b-479f-9da0-8df5bf84b9b6sv/"}</script>
+  <aside class="justnu" id="justnuBar" aria-label="Just nu" hidden></aside>
+  <script>
+  (function(){
+    var bar=document.getElementById("justnuBar"), src=document.getElementById("justnu");
+    if(!bar||!src) return;
+    var d; try{d=JSON.parse(src.textContent||"{}");}catch(e){return;}
+    var text=String((d&&d.text)||"").trim();
+    if(!text) return;
+    var M=["januari","februari","mars","april","maj","juni","juli","augusti","september","oktober","november","december"];
+    function e(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+    var p=String(d.date||"").split("-"), when="";
+    if(p.length===3&&M[Number(p[1])-1]) when="Uppdaterad "+Number(p[2])+" "+M[Number(p[1])-1]+" "+p[0];
+    var url=/^https?:\/\//.test(String(d.url||""))?d.url:"";
+    var src2=url?'<a href="'+e(url)+'" target="_blank" rel="noopener">'+e(d.source||"Källa")+' ↗</a>':(d.source?e(d.source):"");
+    var meta=[when, src2?"Källa: "+src2:""].filter(Boolean).join(" · ");
+    bar.innerHTML='<span class="justnu-label">Just nu</span><p class="justnu-text">'+e(text)+'</p>'+(meta?'<span class="justnu-meta">'+meta+'</span>':"");
+    bar.hidden=false;
+  })();
+  </script>
   <div class="tool-row">
     <label class="search">
       <span class="visually-hidden">Sök</span>
