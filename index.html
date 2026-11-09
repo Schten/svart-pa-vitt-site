@@ -231,6 +231,54 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:.8r
 .justnu-meta a:hover{color:#f4f2ee}
 .justnu:not([hidden])~.tool-row{margin-top:.75rem}
 @media(max-width:560px){.justnu-meta{margin-left:0;white-space:normal}}
+
+.tidslinje{max-width:860px;margin:.6rem auto 0;border:1px solid #313844;border-radius:12px;background:rgba(28,33,43,.55);color:#c8c4be;font-size:.82rem;line-height:1.45}
+.tidslinje[hidden]{display:none}
+.tidslinje summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .7rem;padding:.6rem .85rem}
+.tidslinje summary::-webkit-details-marker{display:none}
+.tl-label{flex:0 0 auto;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;font-weight:650;color:var(--accent)}
+.tl-label::before{content:"▸ ";color:#7d8796}
+.tidslinje[open] .tl-label::before{content:"▾ "}
+.tl-latest{flex:1 1 18rem;min-width:0;color:#a7a299}
+.tl-latest b{color:#d5d1cb;font-weight:600}
+.tl-toggle{margin-left:auto;color:#8d8880;font-size:.72rem;white-space:nowrap}
+.tl-list{list-style:none;margin:0;padding:.15rem .85rem .75rem 1.05rem;border-top:1px solid #313844}
+.tl-item{position:relative;padding:.55rem 0 .1rem .95rem;border-left:1px solid #3a4352}
+.tl-item::before{content:"";position:absolute;left:-.27rem;top:.82rem;width:.5rem;height:.5rem;border-radius:99px;background:#1c212b;border:1px solid var(--accent)}
+.tl-item:last-child::before{background:var(--accent)}
+.tl-date{display:block;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:#8d8880;font-weight:650}
+.tl-text{margin:.1rem 0 0;color:#d5d1cb}
+.tl-meta{font-size:.72rem;color:#8d8880}
+.tl-meta a{color:#a7a299;text-decoration:underline;text-underline-offset:2px}
+.tl-meta a:hover{color:#f4f2ee}
+.jump-row{max-width:860px;margin:.55rem auto 0;display:flex;flex-wrap:wrap;gap:.3rem .9rem;font-size:.78rem;color:#8d8880}
+.jump-row a{color:#a7a299;text-decoration:underline;text-underline-offset:2px}
+.jump-row a:hover{color:#f4f2ee}
+.compare h2{margin:0 0 .3rem;font-size:1.02rem}
+.cmp-controls{display:flex;flex-wrap:wrap;gap:.45rem .9rem;align-items:flex-end;margin:.4rem 0 .7rem}
+.cmp-controls .f select{background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:.18rem 0;min-width:6rem;color:var(--ink)}
+.cmp-controls .f select option{background:#1c212b}
+.cmp-vs{color:var(--muted);font-size:.8rem;padding-bottom:.2rem}
+.cmp-result{display:flex;align-items:center;gap:.9rem;margin:.2rem 0 .5rem;flex-wrap:wrap}
+.cmp-pct{font-size:2rem;font-weight:700;letter-spacing:-.02em;color:#f4f2ee;line-height:1}
+.cmp-desc{flex:1 1 16rem;color:#c8c4be;font-size:.84rem}
+.cmp-bar{height:.5rem;background:var(--nej-bg);border-radius:99px;overflow:hidden;margin:.15rem 0 .8rem}
+.cmp-bar span{display:block;height:100%;background:var(--ja);border-radius:99px}
+.cmp-list{list-style:none;margin:0;padding:0}
+.cmp-item{border-top:1px solid var(--line);padding:.55rem 0}
+.cmp-item a{color:#d5d1cb;text-decoration:none;font-weight:600}
+.cmp-item a:hover{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.cmp-q{margin:.15rem 0 .3rem;color:#a7a299;font-size:.8rem}
+.cmp-votes{display:flex;gap:.35rem;align-items:center;font-size:.72rem;color:var(--muted)}
+.cmp-votes .party{width:auto;min-width:1.55rem;padding:0 .35rem;height:1.45rem}
+.cmp-more{margin-top:.5rem;background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:.3rem .65rem;font:inherit;font-size:.75rem;cursor:pointer}
+.cmp-more:hover{color:var(--ink)}
+.copy-link{cursor:pointer;font:inherit;font-size:.7rem}
+.copy-link.done{color:var(--ja);border-color:rgba(111,191,149,.35)}
+.case{scroll-margin-top:1rem}
+.case.flash{box-shadow:0 0 0 2px var(--accent);transition:box-shadow .4s}
+.toast{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%);background:#232935;color:#f4f2ee;border:1px solid #3a4558;border-radius:999px;padding:.45rem .9rem;font-size:.8rem;z-index:50;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.toast[hidden]{display:none}
 </style></head><body>
 <div class="top">
   <header>
@@ -260,6 +308,32 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:.8r
     bar.hidden=false;
   })();
   </script>
+  <script id="tidslinje" type="application/json">[{"date": "2026-09-13", "text": "Riksdagsval. S, V, MP och C fick tillsammans 176 mandat, M, SD, KD och L 173. Slutligt resultat: S 99, M 70, SD 62, V 30, C 25, KD 22, MP 22, L 19.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/sep/19/den-nya-riksdagen-efter-valet_cmsad780a37-f1ae-4d47-a4a7-b6ea2a69a21esv/"}, {"date": "2026-09-17", "text": "Ulf Kristersson (M) beg\u00e4rde att bli entledigad som statsminister. Talmannen inledde processen f\u00f6r att bilda ny regering.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/sep/17/talmannen-inleder-process-for-regeringsbildning_cms6291f93c-a728-4498-a0b9-e30f36627e3fsv/"}, {"date": "2026-09-18", "text": "Magdalena Andersson (S) fick talmannens f\u00f6rsta sonderingsuppdrag.", "source": "SVT Nyheter", "url": "https://www.svt.se/nyheter/inrikes/magdalena-andersson-s-far-sonderingsuppdrag-stor-odmjukhet"}, {"date": "2026-09-28", "text": "Andreas Norl\u00e9n (M) valdes om till talman med 200 r\u00f6ster mot 146 f\u00f6r Johanna Haraldsson (S).", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/sep/28/andreas-norlen-vald-till-riksdagens-talman_cms93e06ec7-b6ba-4e4b-82e9-7978bbd8500csv/"}, {"date": "2026-09-28", "text": "Magdalena Andersson l\u00e4mnade tillbaka sonderingsuppdraget, efter att V st\u00f6ttat Norl\u00e9n i talmansvalet.", "source": "SVT Nyheter", "url": "https://www.svt.se/nyheter/inrikes/magdalena-andersson-s-lamnar-over-sonderingsuppdraget"}, {"date": "2026-10-02", "text": "Talmannen gav Magdalena Andersson i uppdrag att \u00e5teruppta sonderingen fr\u00e5n 5 oktober, med rapport senast 12 oktober.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/2/talmannens-sonderingsuppdrag-till-magdalena_cms77150d24-8e8b-479f-9da0-8df5bf84b9b6sv/"}, {"date": "2026-10-11", "text": "Andersson fick en dag till: rapporten flyttades fr\u00e5n 12 till 13 oktober.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/11/talmannen-tar-emot-rapport-fran-magdalena_cmsc34a4ffd-6d8a-493a-a914-885a088322f8sv/"}, {"date": "2026-10-13", "text": "Andersson s\u00e5g det inte som meningsfullt att forts\u00e4tta sondera. Talmannen lade fram henne som statsminister f\u00f6r en ren S-regering.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/13/talmannen-har-lagt-fram-magdalena-andersson-s_cmsf08a50bf-30b0-4275-acca-70e8a787fda4sv/"}, {"date": "2026-10-15", "text": "Riksdagen sa nej till Magdalena Andersson som statsminister: 99 ja, 248 nej.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/15/nej-till-magdalena-andersson-s-som-statsminister_cmsd2ab1134-a03c-4be2-b345-af0aacff33d3sv/", "arende": "HE191015-1"}, {"date": "2026-10-19", "text": "Elisabeth Thand Ringqvist (C) fick sonderingsuppdraget, med rapport senast 26 oktober.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/19/talmannen-ger-sonderingsuppdrag-till-elisabeth_cms20f3231b-7bf8-47ca-a1c7-2a0e5045b80dsv/"}, {"date": "2026-10-29", "text": "Talmannen meddelade att han l\u00e4gger fram Thand Ringqvist som statsminister f\u00f6r en regering av C, S, KD, MP och L.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/okt/29/talmannen-lagger-fram-elisabeth-thand-ringqvist_cmsde7b2cc3-ca41-472b-b946-7715715b2f5fsv/"}, {"date": "2026-11-03", "text": "Riksdagen sa nej till Elisabeth Thand Ringqvist som statsminister: 25 ja, 324 nej.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/nov/3/nej-till-elisabeth-thand-ringqvist-c-som_cms6afacb7c-be00-432a-b75e-37e169872323sv/", "arende": "HE191103-1"}, {"date": "2026-11-03", "text": "Ulf Kristersson (M) fick sonderingsuppdraget, med rapport senast 10 november.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/nov/3/talmannen-ger-sonderingsuppdrag-till-ulf_cms54664e82-75f7-4a53-9b10-3b9fe6330da0sv/"}, {"date": "2026-11-06", "text": "SD sl\u00e4ppte kravet p\u00e5 ministerposter. C bad S och M om varsitt politiskt \u201dtotalpaket\u201d.", "source": "SVT Nyheter", "url": "https://www.svt.se/nyheter/inrikes/kristersson-far-forlangd-sondering-efter-nya-besked-fran-sd-och-c"}, {"date": "2026-11-06", "text": "Talmannen f\u00f6rl\u00e4ngde Kristerssons uppdrag med \u201dytterligare n\u00e5gra dagar\u201d. Ny dag f\u00f6r rapporten meddelas senare.", "source": "Riksdagen", "url": "https://www.riksdagen.se/sv/aktuellt/aktuelltnotiser/2026/nov/6/talmannen-forlanger-ulf-kristerssons_cmsaf0961e5-8ddf-4cc8-844a-b1d95411414asv/"}, {"date": "2026-11-08", "text": "Magdalena Andersson sa att hon vill jobba f\u00f6r en regering av S, C och MP i n\u00e4ra samarbete med V. V svarade att de r\u00f6star nej om V inte f\u00e5r sitta i regeringen.", "source": "SVT Nyheter", "url": "https://www.svt.se/nyheter/inrikes/senaste-nytt-om-val-2026"}]</script>
+  <details class="tidslinje" id="tidslinjeBox" hidden></details>
+  <script>
+  (function(){
+    var box=document.getElementById("tidslinjeBox"), src=document.getElementById("tidslinje");
+    if(!box||!src) return;
+    var list; try{list=JSON.parse(src.textContent||"[]");}catch(e){return;}
+    if(!Array.isArray(list)) return;
+    list=list.filter(function(x){return x&&String(x.text||"").trim();});
+    if(!list.length) return;
+    list=list.map(function(x,i){return {x:x,i:i};}).sort(function(a,b){return String(a.x.date||"").localeCompare(String(b.x.date||""))||a.i-b.i;}).map(function(o){return o.x;});
+    var M=["januari","februari","mars","april","maj","juni","juli","augusti","september","oktober","november","december"];
+    function e(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+    function d(iso){var p=String(iso||"").split("-");return (p.length===3&&M[Number(p[1])-1])?Number(p[2])+" "+M[Number(p[1])-1]+" "+p[0]:e(iso);}
+    var last=list[list.length-1];
+    var items=list.map(function(x){
+      var url=/^https?:\/\//.test(String(x.url||""))?x.url:"";
+      var srcl=url?'<a href="'+e(url)+'" target="_blank" rel="noopener">'+e(x.source||"Källa")+' ↗</a>':e(x.source||"");
+      var ar=x.arende?' · <a href="#arende-'+encodeURIComponent(String(x.arende))+'">Så röstade partierna</a>':"";
+      return '<li class="tl-item"><span class="tl-date">'+d(x.date)+'</span><p class="tl-text">'+e(x.text)+'</p>'+((srcl||ar)?'<span class="tl-meta">'+(srcl?"Källa: "+srcl:"")+ar+'</span>':"")+'</li>';
+    }).join("");
+    box.innerHTML='<summary><span class="tl-label">Regeringsbildningen</span><span class="tl-latest"><b>'+d(last.date)+':</b> '+e(last.text)+'</span><span class="tl-toggle">Tidslinje · '+list.length+' händelser</span></summary><ol class="tl-list">'+items+'</ol>';
+    box.hidden=false;
+  })();
+  </script>
+  <nav class="jump-row" aria-label="Genvägar"><a href="#compare">Jämför två partier</a><a href="#stats">Så röstade partierna</a></nav>
   <div class="tool-row">
     <label class="search">
       <span class="visually-hidden">Sök</span>
@@ -310,6 +384,19 @@ header{display:flex;align-items:flex-start;justify-content:space-between;gap:.8r
   <section id="restBlock">
     <div class="list" id="list"></div>
   </section>
+  <section class="stats compare" id="compare">
+    <h2>Jämför två partier</h2>
+    <p>Välj två partier. Vi räknar de frågor där båda röstade ja eller nej på frågan som visas. Om någon av dem avstod eller saknas räknas frågan inte.</p>
+    <div class="cmp-controls">
+      <label class="f">Parti 1 <select id="cmpA"></select></label>
+      <span class="cmp-vs">och</span>
+      <label class="f">Parti 2 <select id="cmpB"></select></label>
+      <label class="f">År <select id="cmpYear"><option value="">Alla år</option></select></label>
+      <label class="f">Ämne <select id="cmpCat"><option value="">Alla ämnen</option></select></label>
+    </div>
+    <div id="cmpOut"></div>
+  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <section class="stats" id="stats">
     <h2>Så röstade partierna</h2>
     <p id="statsLead"></p>
@@ -476,7 +563,7 @@ function caseArticle(g, open){
   const huvud=(g.points||[]).find(p=>p.huvud);
   const side=(g.points||[]).filter(p=>!p.huvud);
   return `
-    <article class="case">
+    <article class="case" id="arende-${esc(g.dok_id)}" data-id="${esc(g.dok_id)}">
       <div class="case-head">
         <div class="title-row">
           <h2>${esc(g.title)}</h2>
@@ -508,6 +595,7 @@ function caseArticle(g, open){
         <div class="actions">
           <a class="btn" href="${esc(g.links.riksdagen)}" target="_blank" rel="noopener">Läs mer på riksdagen.se</a>
           <a class="btn secondary" href="${esc(g.links.dokument_html)}" target="_blank" rel="noopener">Hela texten</a>
+          <button type="button" class="btn secondary copy-link" data-id="${esc(g.dok_id)}">Kopiera länk</button>
         </div>
       </div>
     </article>`;
@@ -539,6 +627,7 @@ function bindList(el){
     const head=node.querySelector(".case-head");
     if(head) head.onclick=()=>node.classList.toggle("open");
   });
+  el.querySelectorAll(".copy-link").forEach(b=>{b.addEventListener("click",ev=>{ev.preventDefault();ev.stopPropagation();copyCaseLink(b);});});
   function findPoint(id){for(const g of DATA.cases){const hit=g.points.find(x=>x.id===id);if(hit)return hit;}}
   el.querySelectorAll(".point").forEach(pointEl=>{
     const box=pointEl.querySelector(".dissent");
@@ -641,7 +730,103 @@ document.getElementById("filterToggle").onclick=()=>{
   btn.setAttribute("aria-expanded", open?"true":"false");
   btn.classList.toggle("open", open);
 };
+
+/* Direktlänk till ärende */
+function caseUrl(id){return location.href.split("#")[0]+"#arende-"+encodeURIComponent(id);}
+let toastTimer=0;
+function toast(msg){
+  const t=document.getElementById("toast");
+  if(!t) return;
+  t.textContent=msg; t.hidden=false;
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>{t.hidden=true;},1800);
+}
+function fallbackCopy(text){
+  const ta=document.createElement("textarea");
+  ta.value=text; ta.setAttribute("readonly",""); ta.style.position="fixed"; ta.style.opacity="0";
+  document.body.appendChild(ta); ta.select();
+  let ok=false; try{ok=document.execCommand("copy");}catch(e){ok=false;}
+  document.body.removeChild(ta);
+  return ok;
+}
+function copyCaseLink(btn){
+  const url=caseUrl(btn.dataset.id);
+  const done=ok=>{
+    if(ok){
+      btn.textContent="Länk kopierad"; btn.classList.add("done"); toast("Länk kopierad");
+      setTimeout(()=>{btn.textContent="Kopiera länk"; btn.classList.remove("done");},1800);
+    } else {
+      window.prompt("Kopiera länken:", url);
+    }
+  };
+  if(navigator.clipboard&&window.isSecureContext){
+    navigator.clipboard.writeText(url).then(()=>done(true),()=>done(fallbackCopy(url)));
+  } else done(fallbackCopy(url));
+}
+function openFromHash(){
+  const h=decodeURIComponent((location.hash||"").slice(1));
+  if(!h.startsWith("arende-")) return;
+  const id=h.slice(7);
+  const g=DATA.cases.find(c=>c.dok_id===id);
+  if(!g) return;
+  let node=document.getElementById("arende-"+id);
+  if(!node){ clearFilters(); node=document.getElementById("arende-"+id); }
+  if(!node) return;
+  node.classList.add("open");
+  node.scrollIntoView({behavior:"auto",block:"start"});
+  node.classList.add("flash");
+  setTimeout(()=>node.classList.remove("flash"),2600);
+}
+window.addEventListener("hashchange",openFromHash);
+document.addEventListener("click",ev=>{const a=ev.target.closest&&ev.target.closest('a[href^="#arende-"]');if(a&&a.getAttribute("href")===location.hash){ev.preventDefault();openFromHash();}});
+
+/* Jämför två partier */
+const cmpA=document.getElementById("cmpA"), cmpB=document.getElementById("cmpB");
+const cmpYear=document.getElementById("cmpYear"), cmpCat=document.getElementById("cmpCat");
+const cmpOut=document.getElementById("cmpOut");
+let cmpShown=10;
+PARTIES.forEach(p=>{[cmpA,cmpB].forEach(sel=>{const o=document.createElement("option");o.value=p;o.textContent=p;sel.appendChild(o);});});
+cmpA.value="S"; cmpB.value="M";
+[...new Set(DATA.cases.map(c=>String(c.date||"").slice(0,4)).filter(y=>/^\d{4}$/.test(y)))].sort().reverse()
+  .forEach(y=>{const o=document.createElement("option");o.value=y;o.textContent=y;cmpYear.appendChild(o);});
+(DATA.categories||[]).forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;cmpCat.appendChild(o);});
+function renderCompare(){
+  const a=cmpA.value, b=cmpB.value, y=cmpYear.value, cat=cmpCat.value;
+  if(a===b){cmpOut.innerHTML=`<div class="empty">Välj två olika partier.</div>`;return;}
+  let same=0,total=0; const diff=[];
+  DATA.cases.forEach(g=>{
+    if(y && !String(g.date||"").startsWith(y)) return;
+    if(cat && g.category!==cat) return;
+    (g.points||[]).forEach(pt=>{
+      const pv=pt.parties||{}, va=pv[a], vb=pv[b];
+      if(!decisiveVote(va)||!decisiveVote(vb)) return;
+      total++;
+      if(va===vb) same++; else diff.push({g,pt,va,vb});
+    });
+  });
+  if(!total){cmpOut.innerHTML=`<div class="empty">Inga frågor där både ${esc(a)} och ${esc(b)} röstade ja eller nej med de här valen.</div>`;return;}
+  diff.sort((x,z)=>String(z.g.date).localeCompare(String(x.g.date)));
+  const pct=wholePct(same,total);
+  const scope=[y?("år "+y):"", cat?("ämnet "+cat):""].filter(Boolean).join(", ");
+  const shown=diff.slice(0,cmpShown);
+  cmpOut.innerHTML=`
+    <div class="cmp-result"><span class="cmp-pct">${pct}%</span>
+      <span class="cmp-desc">${esc(a)} och ${esc(b)} röstade likadant i ${same} av ${total} frågor${scope?" ("+esc(scope)+")":""}. De röstade olika i ${total-same}.</span></div>
+    <div class="cmp-bar" title="${pct} procent likadant"><span style="width:${pct}%"></span></div>
+    ${diff.length?`<h3>Senaste frågorna där de röstade olika</h3>
+    <ul class="cmp-list">${shown.map(d=>`
+      <li class="cmp-item">
+        <a href="#arende-${encodeURIComponent(d.g.dok_id)}">${esc(d.g.title)}</a>
+        <p class="cmp-q">${esc(fmtDate(d.g.date))} · ${esc(d.pt.rubrik||"")}</p>
+        <div class="cmp-votes"><span class="party ${pc(d.va)}">${esc(a)} ${esc(d.va)}</span><span class="party ${pc(d.vb)}">${esc(b)} ${esc(d.vb)}</span></div>
+      </li>`).join("")}</ul>
+    ${diff.length>cmpShown?`<button type="button" class="cmp-more" id="cmpMore">Visa fler (${diff.length-cmpShown} kvar)</button>`:""}`:""}`;
+  const more=document.getElementById("cmpMore");
+  if(more) more.onclick=()=>{cmpShown+=20;renderCompare();};
+}
+[cmpA,cmpB,cmpYear,cmpCat].forEach(el=>el.onchange=()=>{cmpShown=10;renderCompare();});
 document.getElementById("latestNote").textContent=fmtDate(maxDate);
 renderStats();
 render();
+renderCompare();
+openFromHash();
 </script></body></html>
